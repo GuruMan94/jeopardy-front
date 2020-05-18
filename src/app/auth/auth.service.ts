@@ -15,8 +15,7 @@ export class AuthService {
   private url = "http://localhost:8080";
 
   constructor(private http: HttpClient,
-              private localStorageService: LocalStorageService,
-              private router: Router) {
+              private localStorageService: LocalStorageService) {
 
   }
 
@@ -36,6 +35,10 @@ export class AuthService {
 
   isAuthenticated() {
     return this.localStorageService.retrieve('authToken') != null;
+  }
+
+  getUserName(){
+    return this.localStorageService.retrieve('username');
   }
 
   logout() {

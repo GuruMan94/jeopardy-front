@@ -5,11 +5,12 @@
   </button>
   <span class="fill-space"></span>
   <div>
-    <a class="toolbar-item" mat-raised-button [routerLink]="'/register'"
+    <a class="toolbar-button" mat-button [routerLink]="'/register'"
        *ngIf="!authService.isAuthenticated()"> Register </a>
-    <a class="toolbar-item" mat-raised-button [routerLink]="'/login'"
+    <a class="toolbar-button" mat-raised-button [routerLink]="'/login'"
        *ngIf="!authService.isAuthenticated()"> Log in </a>
-    <a class="toolbar-item" mat-raised-button (click)="logout()"
+    <label class="toolbar-text">{{authService.getUserName()}}</label>
+    <a class="toolbar-button" mat-raised-button (click)="logout()"
        *ngIf="authService.isAuthenticated()"> Log out </a>
   </div>
 
