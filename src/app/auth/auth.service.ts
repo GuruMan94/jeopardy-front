@@ -38,14 +38,6 @@ export class AuthService {
     return this.localStorageService.retrieve('authToken') != null;
   }
 
-  canActivate(): boolean {
-    const isAuth = this.isAuthenticated();
-    if (!isAuth) {
-      this.router.navigateByUrl('/login').then(r => console.log("login"))
-    }
-    return isAuth;
-  }
-
   logout() {
     return this.http.post(`${this.url}/user/logout`, {}, {observe: 'response'})
       .pipe(map(() => {
