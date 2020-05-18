@@ -1,0 +1,28 @@
+<div class="centered">
+  <mat-card-content>
+    <form [formGroup]="loginForm" class="registrationForm">
+      <h1>Login Form:</h1>
+      <mat-form-field class="registrationField">
+        <label>
+          <input matInput placeholder="username ..." formControlName="userName">
+        </label>
+      </mat-form-field>
+
+      <mat-form-field class="registrationField">
+        <label>
+          <input matInput placeholder="password ..." formControlName="password">
+        </label>
+        <mat-error *ngIf="password.invalid && password.touched">
+          Password is too short(min 3)
+        </mat-error>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="login()"
+            [disabled]="loginForm.invalid" color="primary">
+      LOGIN
+    </button>
+  </mat-card-actions>
+</div>
+

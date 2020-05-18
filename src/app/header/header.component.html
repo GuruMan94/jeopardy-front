@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+  <span>Jeopardy</span>
+  <span class="spacer"></span>
+  <div>
+    <a mat-button [routerLink]="'/register'" *ngIf="!authService.isAuthenticated()"> Register </a>
+    <a mat-button [routerLink]="'/login'" *ngIf="!authService.isAuthenticated()"> Log in </a>
+    <a mat-button [routerLink]="'/game/start'" *ngIf="authService.isAuthenticated()"> Start game </a>
+    <a mat-raised-button (click)="logout()" *ngIf="authService.isAuthenticated()"> Log out </a>
+  </div>
+</mat-toolbar>

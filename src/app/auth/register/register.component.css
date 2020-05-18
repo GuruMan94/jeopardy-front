@@ -1,0 +1,16 @@
+.registrationForm {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.registrationField {
+  width: 100%;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

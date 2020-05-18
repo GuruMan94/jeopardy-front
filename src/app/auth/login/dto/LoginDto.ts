@@ -1,5 +1,4 @@
-export class RegisterDto {
+export class LoginDto {
   userName: String;
-  password: String;
-  confirmPassword: String
+  password: String
 }
