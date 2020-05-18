@@ -17,6 +17,7 @@ import {LoginComponent} from './auth/login/login.component';
 import {NgxWebstorageModule} from "ngx-webstorage";
 import {HomeComponent} from './home/home.component';
 import {HttpClientInterceptor} from "./http-client-interceptor";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import {HttpClientInterceptor} from "./http-client-interceptor";
     MatCardModule,
     HttpClientModule,
     NgxWebstorageModule.forRoot(),
+    MatIconModule,
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true}],
   bootstrap: [AppComponent]
